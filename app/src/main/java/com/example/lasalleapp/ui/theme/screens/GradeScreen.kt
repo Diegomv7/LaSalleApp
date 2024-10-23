@@ -68,6 +68,18 @@ fun GradeScreen(innerPadding: PaddingValues, navController: NavController) {
                     color = MaterialTheme.colorScheme.onPrimary,
                     style = MaterialTheme.typography.bodyMedium,
                 )
+                Spacer(modifier = Modifier.size(10.dp))
+                Text(
+                    text = "5to Semestre",
+                    color = MaterialTheme.colorScheme.onPrimary,
+                    style = MaterialTheme.typography.bodyMedium,
+                )
+                Spacer(modifier = Modifier.size(10.dp))
+                Text(
+                    text = "Promedio 9.22",
+                    color = MaterialTheme.colorScheme.onPrimary,
+                    style = MaterialTheme.typography.bodyMedium,
+                )
             }
         }
         Column(
