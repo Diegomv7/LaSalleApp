@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lasalleapp.ui.theme.LaSalleAppTheme
 import com.example.lasalleapp.ui.theme.models.Payments
+import com.example.lasalleapp.ui.theme.ui.components.PaymentItem
 import com.example.lasalleapp.ui.theme.utils.pays
 
 @Composable
@@ -50,55 +51,6 @@ fun PaymentScreen(innerPadding: PaddingValues) {
         }
     }
 }
-
-
-@Composable
-fun PaymentItem(payment: Payments) {
-    val backgroundColor = if (payment.paid) Color(0xFFC8E6C9) else Color(0xFFFFCDD2)
-    val statusText = if (payment.paid) "Pagado" else "Pendiente"
-    val statusIcon = if (payment.paid) Icons.Default.CheckCircle else Icons.Default.Warning
-    val iconTint = if (payment.paid) Color(0xFF388E3C) else Color(0xFFD32F2F)
-
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(70.dp)
-            .clip(RoundedCornerShape(12.dp))
-            .background(backgroundColor)
-            .padding(16.dp),
-        contentAlignment = Alignment.CenterStart
-    ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            Text(
-                text = payment.mes,
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Medium
-            )
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    imageVector = statusIcon,
-                    contentDescription = statusText,
-                    tint = iconTint,
-                    modifier = Modifier.size(24.dp)
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    text = statusText,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = iconTint,
-                    fontWeight = FontWeight.Bold
-                )
-            }
-        }
-    }
-}
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
